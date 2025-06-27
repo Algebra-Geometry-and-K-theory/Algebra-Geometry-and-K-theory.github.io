@@ -3,6 +3,8 @@
 
 <head>
     <base href=".">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="keywords" content="Algebra, Geometry, K-theory, Mathematics, Conference">
@@ -22,42 +24,52 @@
         }
 
         .banner {
-            background: #fff;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)), url('sys.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-bottom: 1px solid #e5e5e5;
-            padding: 60px 20px;
+            padding: clamp(40px, 8vw, 80px) 20px;
             text-align: center;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .banner-content {
             max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .title-main {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 8px;
+            margin-bottom: clamp(8px, 2vw, 16px);
             letter-spacing: -1px;
+            line-height: 1.1;
         }
 
         .conference-info {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             color: #888;
             font-weight: 500;
+            line-height: 1.4;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
             font-weight: 600;
             color: #1a1a1a;
-            margin: 48px 0 24px 0;
+            margin: clamp(32px, 6vw, 48px) 0 clamp(16px, 3vw, 24px) 0;
             line-height: 1.2;
         }
 
@@ -66,143 +78,32 @@
         }
 
         h3 {
-            font-size: 1.25rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             font-weight: 600;
-            margin: 32px 0 16px 0;
+            margin: clamp(24px, 4vw, 32px) 0 clamp(12px, 2vw, 16px) 0;
             color: #1a1a1a;
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: clamp(16px, 3vw, 20px);
             color: #333;
-            font-size: 16px;
+            font-size: clamp(15px, 2.5vw, 16px);
             line-height: 1.7;
         }
 
-        .highlight-section {
-            background: #f5f5f5;
-            padding: 32px;
-            border-radius: 8px;
-            margin: 40px 0;
-            border-left: 4px solid #1a1a1a;
-        }
 
-        .highlight-section h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-        }
-
-        .highlight-section p {
-            margin-bottom: 0;
-            color: #666;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .topic-card {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
-            transition: border-color 0.2s ease;
-        }
-
-        .topic-card:hover {
-            border-color: #ccc;
-        }
-
-        .topic-card h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-
-        .topic-card p {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            margin: 40px 0;
-        }
-
-        .info-card {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
-        }
-
-        .info-card h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        .info-card p {
-            font-size: 14px;
-            color: #666;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .dates-list {
-            background: #fff;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
-            margin: 32px 0;
-        }
-
-        .dates-list ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .dates-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .dates-list li:last-child {
-            border-bottom: none;
-        }
-
-        .date-label {
-            font-weight: 500;
-            color: #1a1a1a;
-        }
-
-        .date-value {
-            color: #666;
-            font-size: 14px;
-        }
 
         .speakers-compact {
             background: #fff;
             border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 32px 0;
+            border-radius: 12px;
+            padding: clamp(20px, 3vw, 24px);
+            margin: clamp(24px, 4vw, 32px) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .speakers-section {
-            margin-bottom: 32px;
+            margin-bottom: clamp(24px, 4vw, 32px);
         }
 
         .speakers-section:last-child {
@@ -210,7 +111,7 @@
         }
 
         .speakers-section h4 {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             font-weight: 600;
             color: #1a1a1a;
             margin-bottom: 16px;
@@ -222,7 +123,7 @@
             line-height: 1.4;
             margin-bottom: 8px;
             color: #1a1a1a;
-            font-size: 16px;
+            font-size: clamp(14px, 2.5vw, 16px);
         }
 
         .speaker-line:last-child {
@@ -231,19 +132,20 @@
 
         .speaker-affiliation-inline {
             color: #666;
-            font-size: 14px;
+            font-size: clamp(13px, 2vw, 14px);
         }
 
         .program-schedule {
             background: #fff;
             border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 24px;
-            margin: 32px 0;
+            border-radius: 12px;
+            padding: clamp(20px, 3vw, 24px);
+            margin: clamp(24px, 4vw, 32px) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .program-day {
-            margin-bottom: 32px;
+            margin-bottom: clamp(24px, 4vw, 32px);
         }
 
         .program-day:last-child {
@@ -251,7 +153,7 @@
         }
 
         .day-header {
-            font-size: 1.25rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             font-weight: 600;
             color: #1a1a1a;
             margin-bottom: 16px;
@@ -261,8 +163,9 @@
 
         .program-item {
             display: flex;
-            padding: 12px 0;
+            padding: clamp(10px, 2vw, 12px) 0;
             border-bottom: 1px solid #f0f0f0;
+            gap: clamp(16px, 3vw, 24px);
         }
 
         .program-item:last-child {
@@ -272,24 +175,49 @@
         .program-time {
             font-weight: 500;
             color: #1a1a1a;
-            min-width: 100px;
+            min-width: clamp(80px, 15vw, 120px);
             flex-shrink: 0;
+            font-size: clamp(13px, 2vw, 14px);
         }
 
         .program-content {
             flex: 1;
-            margin-left: 24px;
         }
 
         .program-speaker {
             font-weight: 500;
             color: #1a1a1a;
+            font-size: clamp(14px, 2.5vw, 16px);
+            line-height: 1.4;
         }
 
         .program-talk-title {
             color: #666;
             font-style: italic;
-            font-size: 14px;
+            font-size: clamp(13px, 2vw, 14px);
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .registration-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: clamp(12px, 2.5vw, 16px) clamp(20px, 4vw, 32px);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: clamp(8px, 2vw, 16px) 0;
+            font-size: clamp(14px, 2.5vw, 16px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .registration-button:hover {
+            background: #333;
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         footer {
@@ -297,8 +225,8 @@
             border-top: 1px solid #e5e5e5;
             color: #666;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 14px;
+            padding: clamp(30px, 5vw, 40px) 20px;
+            font-size: clamp(13px, 2vw, 14px);
         }
 
         footer a {
@@ -310,50 +238,152 @@
             text-decoration: underline;
         }
 
-        .registration-button {
-            display: inline-block;
-            background: #1a1a1a;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.2s ease;
-            margin: 8px 0;
-        }
-        
-        .registration-button:hover {
-            background: #333;
-            text-decoration: none;
-        }
-
+        /* Enhanced mobile responsiveness */
         @media (max-width: 768px) {
-            .title-main {
-                font-size: 2.25rem;
+            .banner {
+                padding: 60px 20px 40px;
+                min-height: 35vh;
             }
-            
+
             .container {
                 padding: 40px 20px;
             }
 
-            .topics-grid,
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .dates-list li {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-
             .program-item {
                 flex-direction: column;
+                gap: 8px;
+                padding: 16px 0;
+            }
+
+            .program-time {
+                min-width: auto;
+                font-weight: 600;
+                color: #1a1a1a;
             }
 
             .program-content {
                 margin-left: 0;
-                margin-top: 8px;
+            }
+
+            .speakers-compact {
+                padding: 20px;
+            }
+
+            .registration-button {
+                display: block;
+                text-align: center;
+                width: 100%;
+                max-width: 300px;
+                margin: 20px auto;
+            }
+        }
+
+        /* Tablet specific adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 60px 40px;
+            }
+
+            .banner {
+                padding: 80px 40px;
+            }
+        }
+
+        /* Large screen optimizations */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+                padding: 100px 60px;
+            }
+
+            .banner {
+                padding: 120px 60px;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .banner {
+                background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)), url('sys.webp');
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #0f0f0f;
+                color: #e5e5e5;
+            }
+
+            .banner {
+                background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.5)), url('sys.webp');
+            }
+
+            .title-main {
+                color: #fff;
+            }
+
+            .conference-info {
+                color: #aaa;
+            }
+
+            h2, h3 {
+                color: #fff;
+            }
+
+            p {
+                color: #ccc;
+            }
+
+            .speakers-compact,
+            .program-schedule {
+                background: #1a1a1a;
+                border-color: #333;
+            }
+
+            .registration-button {
+                background: #fff;
+                color: #1a1a1a;
+            }
+
+            .registration-button:hover {
+                background: #e5e5e5;
+            }
+
+            footer {
+                background: #1a1a1a;
+                border-top-color: #333;
+            }
+
+            footer a {
+                color: #fff;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .banner {
+                background: none;
+                border-bottom: 2px solid #000;
+            }
+
+            .registration-button {
+                display: none;
+            }
+
+            .speakers-compact,
+            .program-schedule {
+                box-shadow: none;
+                border: 1px solid #ccc;
             }
         }
     </style>
@@ -413,6 +443,10 @@
         <h2>Registration & Information</h2>
         <p>Please register before October 15, 2025.</p>
         <p><a href="link_to_reg" class="registration-button">Register Now</a></p>
+
+        <h2>Practical information</h2>
+
+        <h3> Direction</h3>
 
         <h2>Support</h2>
         <p>
