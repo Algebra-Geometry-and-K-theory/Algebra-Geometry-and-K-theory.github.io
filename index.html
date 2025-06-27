@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href=".">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="keywords" content="Algebra, Geometry, K-theory, Mathematics, Conference">
+    <title>Algebra, Geometry and K-theory 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        .banner {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .title-main {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .conference-info {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 48px 0 24px 0;
+            line-height: 1.2;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .highlight-section {
+            background: #f5f5f5;
+            padding: 32px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border-left: 4px solid #1a1a1a;
+        }
+
+        .highlight-section h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .highlight-section p {
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+
+        .topic-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            transition: border-color 0.2s ease;
+        }
+
+        .topic-card:hover {
+            border-color: #ccc;
+        }
+
+        .topic-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+
+        .topic-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .info-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .dates-list {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .dates-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dates-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dates-list li:last-child {
+            border-bottom: none;
+        }
+
+        .date-label {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .date-value {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .speakers-compact {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 32px 0;
+        }
+
+        .speakers-section {
+            margin-bottom: 32px;
+        }
+
+        .speakers-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .speakers-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .speaker-line {
+            line-height: 1.4;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-size: 16px;
+        }
+
+        .speaker-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .speaker-affiliation-inline {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .program-schedule {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .program-day {
+            margin-bottom: 32px;
+        }
+
+        .program-day:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        .program-item {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .program-item:last-child {
+            border-bottom: none;
+        }
+
+        .program-time {
+            font-weight: 500;
+            color: #1a1a1a;
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+
+        .program-content {
+            flex: 1;
+            margin-left: 24px;
+        }
+
+        .program-speaker {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .program-talk-title {
+            color: #666;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+            color: #666;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .registration-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            margin: 8px 0;
+        }
+        
+        .registration-button:hover {
+            background: #333;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .title-main {
+                font-size: 2.25rem;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+
+            .topics-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dates-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .program-item {
+                flex-direction: column;
+            }
+
+            .program-content {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="title-main">Algebra, Geometry and K-theory</div>
+            <div class="conference-info">
+                November 15–17, 2025 • Sun Yat-sen University, Guangzhou
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Invited Speakers</h2>
+        <div class="speakers-compact">
+            <div class="speakers-section">
+                <h4>International Speakers</h4>
+            </div>
+            
+            <div class="speakers-section">
+                <h4>Domestic Speakers (国内邀请人)</h4>
+            </div>
+        </div>
+        <p style="font-size: 14px; color: #666; margin-top: 8px;">*: to be confirmed.</p>
+
+        <h2>Program Schedule</h2>
+        <div class="program-schedule">
+            <div class="program-day">
+                <div class="day-header">Day 1 - November xx, 2025</div>
+                <div class="program-item">
+                    <div class="program-time">9:00-9:30</div>
+                    <div class="program-content">
+                        <div class="program-speaker">Registration & Welcome Coffee</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">9:30-10:30</div>
+                    <div class="program-content">
+                        <div class="program-speaker">Someone</div>
+                        <div class="program-talk-title">some tittle</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">10:30-11:00</div>
+                    <div class="program-content">
+                        <div class="program-speaker">Coffee Break</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Registration & Information</h2>
+        <p>Please register before October 15, 2025.</p>
+        <p><a href="link_to_reg" class="registration-button">Register Now</a></p>
+
+        <h2>Support</h2>
+        <p>
+            This conference is generously supported by the NSFC Grant xxxxxxxx.
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2025 AGK Conference Organizers
+    </footer>
+</body>
+</html>
