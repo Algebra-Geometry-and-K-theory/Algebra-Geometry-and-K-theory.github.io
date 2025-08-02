@@ -38,7 +38,7 @@
         }
 
         .banner-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             width: 100%;
         }
@@ -54,19 +54,19 @@
 
         .conference-info {
             font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            color: #888;
+            color: #1a1a1a;
             font-weight: 500;
             line-height: 1.4;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
         }
 
         h2 {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
             font-weight: 600;
             color: #1a1a1a;
             margin: clamp(32px, 6vw, 48px) 0 clamp(16px, 3vw, 24px) 0;
@@ -91,7 +91,20 @@
             line-height: 1.7;
         }
 
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: clamp(32px, 6vw, 48px) 0 clamp(16px, 3vw, 24px) 0;
+        }
 
+        .section-header:first-child {
+            margin-top: 0;
+        }
+
+        .section-header h2 {
+            margin: 0;
+        }
 
         .speakers-compact {
             background: #fff;
@@ -203,14 +216,14 @@
             display: inline-block;
             background: #1a1a1a;
             color: #fff;
-            padding: clamp(12px, 2.5vw, 16px) clamp(20px, 4vw, 32px);
-            border-radius: 8px;
+            padding: clamp(6px, 1.5vw, 10px) clamp(12px, 2.5vw, 20px);
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            margin: clamp(8px, 2vw, 16px) 0;
-            font-size: clamp(14px, 2.5vw, 16px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: clamp(4px, 1vw, 8px) 0;
+            font-size: clamp(12px, 2vw, 14px);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
         }
         
         .registration-button:hover {
@@ -249,6 +262,12 @@
                 padding: 40px 20px;
             }
 
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
             .program-item {
                 flex-direction: column;
                 gap: 8px;
@@ -278,45 +297,6 @@
             }
         }
 
-        /* Tablet specific adjustments */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                padding: 60px 40px;
-            }
-
-            .banner {
-                padding: 80px 40px;
-            }
-        }
-
-        /* Large screen optimizations */
-        @media (min-width: 1400px) {
-            .container {
-                max-width: 1400px;
-                padding: 100px 60px;
-            }
-
-            .banner {
-                padding: 120px 60px;
-            }
-        }
-
-        /* High DPI displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .banner {
-                background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5)), url('sys.webp');
-            }
-        }
-
-        /* Accessibility improvements */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             body {
@@ -326,6 +306,9 @@
 
             .banner {
                 background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.5)), url('sys.webp');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
 
             .title-main {
@@ -340,7 +323,7 @@
                 color: #fff;
             }
 
-            p {
+            p, .speaker-line {
                 color: #ccc;
             }
 
@@ -394,65 +377,157 @@
         <div class="banner-content">
             <div class="title-main">Algebra, Geometry and K-theory</div>
             <div class="conference-info">
-                November 15–17, 2025 • Sun Yat-sen University, Guangzhou
+                November 24–28, 2025 • Sun Yat-sen University, Guangzhou
             </div>
         </div>
     </div>
 
     <div class="container">
 
-        <h2>Invited Speakers</h2>
+        <h2>About the Conference</h2>
+        <p>K-theory has served as a bridge between algebra and geometry ever since the Grothendieck–Riemann–Roch theorem recast classical problems in a unified language. It has permeated every corner of pure mathematics, from algebraic geometry and commutative and homological algebra to representation theory, algebraic topology, and arithmetic geometry. This conference aims to bring experts together to discuss recent breakthroughs in algebra and geometry and to explore further developments and applications related to K-theory. Conceived as a forum for cross-disciplinary exchange and collaboration, the workshop will foster interaction among researchers from diverse fields.</p>
+
+        <div class="section-header">
+            <h2>Invited Speakers</h2>
+            <button id="nameToggle" onclick="toggleNames()" style="
+                background: #f0f0f0;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                padding: 6px 12px;
+                font-size: 12px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                color: #666;
+                font-weight: 500;
+            ">中/EN</button>
+        </div>
         <div class="speakers-compact">
             <div class="speakers-section">
-                <h4>International Speakers</h4>
+                <div class="speaker-line">Baptiste Calmès* <span class="speaker-affiliation-inline">(Université d'Artois)</span></div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">杜鹏</span>
+                    <span class="english-name">Peng Du</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">浙江师范大学</span><span class="english-affiliation">Zhejiang Normal University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">Jean Fasel* <span class="speaker-affiliation-inline">(Université Grenoble Alpes)</span></div>
+                <div class="speaker-line">Thomas Geisser <span class="speaker-affiliation-inline">(Rikkyo University)</span></div>
+                <div class="speaker-line">Jens Hornbostel <span class="speaker-affiliation-inline">(Bergische Universität Wuppertal)</span></div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">胡文传</span>
+                    <span class="english-name">Wenchuan Hu</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">四川大学</span><span class="english-affiliation">Sichuan University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">Thomas Hudson <span class="speaker-affiliation-inline">(Daegu Gyeongbuk Institute of Science and Technology)</span></div>
+                <div class="speaker-line">Ikeda Takeshi <span class="speaker-affiliation-inline">(Waseda University)</span></div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">金方舟</span>
+                    <span class="english-name">Fangzhou Jin</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">同济大学</span><span class="english-affiliation">Tongji University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">Adeel Khan <span class="speaker-affiliation-inline">(Academia Sinica)</span></div>
+                <div class="speaker-line">Tomoo Matsumura <span class="speaker-affiliation-inline">(International Christian University)</span></div>
+                <div class="speaker-line">Hiroshi Naruse <span class="speaker-affiliation-inline">(University of Yamanashi)</span></div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">秦厚荣</span>
+                    <span class="english-name">Hourong Qin</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">南京大学</span><span class="english-affiliation">Nanjing University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">Marco Schlichting <span class="speaker-affiliation-inline">(University of Warwick)</span></div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">唐国平</span>
+                    <span class="english-name">Guoping Tang</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">中国科学院大学</span><span class="english-affiliation">University of Chinese Academy of Sciences</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">田志宇</span>
+                    <span class="english-name">Zhiyu Tian</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">北京大学</span><span class="english-affiliation">Peking University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">惠昌常</span>
+                    <span class="english-name">Changchang Xi</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">首都师范大学</span><span class="english-affiliation">Capital Normal University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">杨南君</span>
+                    <span class="english-name">Nanjun Yang</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">北京雁栖湖应用数学研究院</span><span class="english-affiliation">Beijing Institute of Mathematical Sciences and Applications</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">赵以庚</span>
+                    <span class="english-name">Yigeng Zhao</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">西湖大学</span><span class="english-affiliation">Westlake University</span>)
+                    </span>
+                </div>
+                <div class="speaker-line">
+                    <span class="chinese-name" style="display: none;">郑维喆</span>
+                    <span class="english-name">Weizhe Zheng</span>
+                    <span class="speaker-affiliation-inline">
+                        (<span class="chinese-affiliation" style="display: none;">中国科学院</span><span class="english-affiliation">Chinese Academy of Sciences</span>)
+                    </span>
+                </div>
             </div>
-            
-            <div class="speakers-section">
-                <h4>Domestic Speakers (国内邀请人)</h4>
-            </div>
+            <p style="font-size: 14px; color: #666;">*: to be confirmed.</p>
         </div>
-        <p style="font-size: 14px; color: #666; margin-top: 8px;">*: to be confirmed.</p>
 
-        <h2>Program Schedule</h2>
-        <div class="program-schedule">
-            <div class="program-day">
-                <div class="day-header">Day 1 - November xx, 2025</div>
-                <div class="program-item">
-                    <div class="program-time">9:00-9:30</div>
-                    <div class="program-content">
-                        <div class="program-speaker">Registration & Welcome Coffee</div>
-                    </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-time">9:30-10:30</div>
-                    <div class="program-content">
-                        <div class="program-speaker">Someone</div>
-                        <div class="program-talk-title">some tittle</div>
-                    </div>
-                </div>
-                <div class="program-item">
-                    <div class="program-time">10:30-11:00</div>
-                    <div class="program-content">
-                        <div class="program-speaker">Coffee Break</div>
-                    </div>
-                </div>
-            </div>
+        <h2>Registration</h2>
+        <p>Not open yet.</p>
+        <!-- <p><a href="link_to_reg" class="registration-button">Register Now</a></p> -->
 
-        </div>
-
-        <h2>Registration & Information</h2>
-        <p>Please register before October 15, 2025.</p>
-        <p><a href="link_to_reg" class="registration-button">Register Now</a></p>
-
-        <h2>Practical information</h2>
-
-        <h3> Direction</h3>
-
-        <h2>Support</h2>
+        <h2>Organizing Committee</h2>
         <p>
-            This conference is generously supported by the NSFC Grant xxxxxxxx.
+            Jianxun Hu, Changzheng Li, Heng Xie
         </p>
     </div>
+
+    <script>
+        function toggleNames() {
+            const chineseNames = document.querySelectorAll('.chinese-name');
+            const englishNames = document.querySelectorAll('.english-name');
+            const chineseAffiliations = document.querySelectorAll('.chinese-affiliation');
+            const englishAffiliations = document.querySelectorAll('.english-affiliation');
+            const button = document.getElementById('nameToggle');
+            
+            const isChineseVisible = chineseNames[0].style.display !== 'none';
+            
+            chineseNames.forEach(name => {
+                name.style.display = isChineseVisible ? 'none' : 'inline';
+            });
+            
+            englishNames.forEach(name => {
+                name.style.display = isChineseVisible ? 'inline' : 'none';
+            });
+            
+            chineseAffiliations.forEach(affiliation => {
+                affiliation.style.display = isChineseVisible ? 'none' : 'inline';
+            });
+            
+            englishAffiliations.forEach(affiliation => {
+                affiliation.style.display = isChineseVisible ? 'inline' : 'none';
+            });
+            
+            button.style.background = isChineseVisible ? '#e8f4f8' : '#f0f0f0';
+            button.style.borderColor = isChineseVisible ? '#4a9eff' : '#ccc';
+            button.style.color = isChineseVisible ? '#2563eb' : '#666';
+        }
+    </script>
 
     <footer>
         &copy; 2025 AGK Conference Organizers
