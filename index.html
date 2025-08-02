@@ -53,7 +53,7 @@
         }
 
         .conference-info {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: clamp(1rem, 2.7vw, 1.2rem);
             color: #1a1a1a;
             font-weight: 500;
             line-height: 1.4;
@@ -112,11 +112,11 @@
             border-radius: 12px;
             padding: clamp(20px, 3vw, 24px);
             margin: clamp(24px, 4vw, 32px) 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .speakers-section {
-            margin-bottom: clamp(24px, 4vw, 32px);
+            margin-bottom: clamp(8px, 2vw, 16px);
         }
 
         .speakers-section:last-child {
@@ -154,7 +154,7 @@
             border-radius: 12px;
             padding: clamp(20px, 3vw, 24px);
             margin: clamp(24px, 4vw, 32px) 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .program-day {
@@ -223,14 +223,26 @@
             transition: all 0.3s ease;
             margin: clamp(4px, 1vw, 8px) 0;
             font-size: clamp(12px, 2vw, 14px);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
         }
-        
+
         .registration-button:hover {
             background: #333;
             text-decoration: none;
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #nameToggle {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #666;
+            font-weight: 500;
         }
 
         footer {
@@ -311,20 +323,17 @@
                 background-repeat: no-repeat;
             }
 
-            .title-main {
-                color: #fff;
+            .title-main,
+            .conference-info,
+            .speaker-line,
+            h2,
+            h3,
+            p {
+                color: #eee;
             }
 
-            .conference-info {
-                color: #aaa;
-            }
-
-            h2, h3 {
-                color: #fff;
-            }
-
-            p, .speaker-line {
-                color: #ccc;
+            .speaker-affiliation-inline {
+                color: #bbb;
             }
 
             .speakers-compact,
@@ -340,6 +349,12 @@
 
             .registration-button:hover {
                 background: #e5e5e5;
+            }
+
+            #nameToggle {
+                background: #333;
+                border-color: #555;
+                color: #ccc;
             }
 
             footer {
@@ -359,7 +374,8 @@
                 border-bottom: 2px solid #000;
             }
 
-            .registration-button {
+            .registration-button,
+            #nameToggle {
                 display: none;
             }
 
@@ -385,106 +401,123 @@
     <div class="container">
 
         <h2>About the Conference</h2>
-        <p>K-theory has served as a bridge between algebra and geometry ever since the Grothendieck–Riemann–Roch theorem recast classical problems in a unified language. It has permeated every corner of pure mathematics, from algebraic geometry and commutative and homological algebra to representation theory, algebraic topology, and arithmetic geometry. This conference aims to bring experts together to discuss recent breakthroughs in algebra and geometry and to explore further developments and applications related to K-theory. Conceived as a forum for cross-disciplinary exchange and collaboration, the workshop will foster interaction among researchers from diverse fields.</p>
+        <p>K-theory has served as a bridge between algebra and geometry ever since the Grothendieck–Riemann–Roch theorem
+            recast classical problems in a unified language. It has permeated every corner of pure mathematics, from
+            algebraic geometry and commutative and homological algebra to representation theory, algebraic topology, and
+            arithmetic geometry. This conference aims to bring experts together to discuss recent breakthroughs in
+            algebra and geometry and to explore further developments and applications related to K-theory. Conceived as
+            a forum for cross-disciplinary exchange and collaboration, the workshop will foster interaction among
+            researchers from diverse fields.</p>
 
         <div class="section-header">
             <h2>Invited Speakers</h2>
-            <button id="nameToggle" onclick="toggleNames()" style="
-                background: #f0f0f0;
-                border: 1px solid #ccc;
-                border-radius: 6px;
-                padding: 6px 12px;
-                font-size: 12px;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                color: #666;
-                font-weight: 500;
-            ">中/EN</button>
+            <button id="nameToggle" onclick="toggleNames()">中/EN</button>
         </div>
         <div class="speakers-compact">
             <div class="speakers-section">
-                <div class="speaker-line">Baptiste Calmès* <span class="speaker-affiliation-inline">(Université d'Artois)</span></div>
+                <div class="speaker-line">Baptiste Calmès* <span class="speaker-affiliation-inline">(Université
+                        d'Artois)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">杜鹏</span>
                     <span class="english-name">Peng Du</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">浙江师范大学</span><span class="english-affiliation">Zhejiang Normal University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">浙江师范大学</span><span
+                            class="english-affiliation">Zhejiang Normal University</span>)
                     </span>
                 </div>
-                <div class="speaker-line">Jean Fasel* <span class="speaker-affiliation-inline">(Université Grenoble Alpes)</span></div>
-                <div class="speaker-line">Thomas Geisser <span class="speaker-affiliation-inline">(Rikkyo University)</span></div>
-                <div class="speaker-line">Jens Hornbostel <span class="speaker-affiliation-inline">(Bergische Universität Wuppertal)</span></div>
+                <div class="speaker-line">Jean Fasel* <span class="speaker-affiliation-inline">(Université Grenoble
+                        Alpes)</span></div>
+                <div class="speaker-line">Thomas Geisser <span class="speaker-affiliation-inline">(Rikkyo
+                        University)</span></div>
+                <div class="speaker-line">Jens Hornbostel <span class="speaker-affiliation-inline">(Bergische
+                        Universität Wuppertal)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">胡文传</span>
                     <span class="english-name">Wenchuan Hu</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">四川大学</span><span class="english-affiliation">Sichuan University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">四川大学</span><span
+                            class="english-affiliation">Sichuan University</span>)
                     </span>
                 </div>
-                <div class="speaker-line">Thomas Hudson <span class="speaker-affiliation-inline">(Daegu Gyeongbuk Institute of Science and Technology)</span></div>
-                <div class="speaker-line">Ikeda Takeshi <span class="speaker-affiliation-inline">(Waseda University)</span></div>
+                <div class="speaker-line">Thomas Hudson <span class="speaker-affiliation-inline">(Daegu Gyeongbuk
+                        Institute of Science and Technology)</span></div>
+                <div class="speaker-line">Ikeda Takeshi <span class="speaker-affiliation-inline">(Waseda
+                        University)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">金方舟</span>
                     <span class="english-name">Fangzhou Jin</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">同济大学</span><span class="english-affiliation">Tongji University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">同济大学</span><span
+                            class="english-affiliation">Tongji University</span>)
                     </span>
                 </div>
-                <div class="speaker-line">Adeel Khan <span class="speaker-affiliation-inline">(Academia Sinica)</span></div>
-                <div class="speaker-line">Tomoo Matsumura <span class="speaker-affiliation-inline">(International Christian University)</span></div>
-                <div class="speaker-line">Hiroshi Naruse <span class="speaker-affiliation-inline">(University of Yamanashi)</span></div>
+                <div class="speaker-line">Adeel Khan <span class="speaker-affiliation-inline">(Academia Sinica)</span>
+                </div>
+                <div class="speaker-line">Tomoo Matsumura <span class="speaker-affiliation-inline">(International
+                        Christian University)</span></div>
+                <div class="speaker-line">Hiroshi Naruse <span class="speaker-affiliation-inline">(University of
+                        Yamanashi)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">秦厚荣</span>
                     <span class="english-name">Hourong Qin</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">南京大学</span><span class="english-affiliation">Nanjing University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">南京大学</span><span
+                            class="english-affiliation">Nanjing University</span>)
                     </span>
                 </div>
-                <div class="speaker-line">Marco Schlichting <span class="speaker-affiliation-inline">(University of Warwick)</span></div>
+                <div class="speaker-line">Marco Schlichting <span class="speaker-affiliation-inline">(University of
+                        Warwick)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">唐国平</span>
                     <span class="english-name">Guoping Tang</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">中国科学院大学</span><span class="english-affiliation">University of Chinese Academy of Sciences</span>)
+                        (<span class="chinese-affiliation" style="display: none;">中国科学院大学</span><span
+                            class="english-affiliation">University of Chinese Academy of Sciences</span>)
                     </span>
                 </div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">田志宇</span>
                     <span class="english-name">Zhiyu Tian</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">北京大学</span><span class="english-affiliation">Peking University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">北京大学</span><span
+                            class="english-affiliation">Peking University</span>)
                     </span>
                 </div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">惠昌常</span>
                     <span class="english-name">Changchang Xi</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">首都师范大学</span><span class="english-affiliation">Capital Normal University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">首都师范大学</span><span
+                            class="english-affiliation">Capital Normal University</span>)
                     </span>
                 </div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">杨南君</span>
                     <span class="english-name">Nanjun Yang</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">北京雁栖湖应用数学研究院</span><span class="english-affiliation">Beijing Institute of Mathematical Sciences and Applications</span>)
+                        (<span class="chinese-affiliation" style="display: none;">北京雁栖湖应用数学研究院</span><span
+                            class="english-affiliation">Beijing Institute of Mathematical Sciences and
+                            Applications</span>)
                     </span>
                 </div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">赵以庚</span>
                     <span class="english-name">Yigeng Zhao</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">西湖大学</span><span class="english-affiliation">Westlake University</span>)
+                        (<span class="chinese-affiliation" style="display: none;">西湖大学</span><span
+                            class="english-affiliation">Westlake University</span>)
                     </span>
                 </div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">郑维喆</span>
                     <span class="english-name">Weizhe Zheng</span>
                     <span class="speaker-affiliation-inline">
-                        (<span class="chinese-affiliation" style="display: none;">中国科学院</span><span class="english-affiliation">Chinese Academy of Sciences</span>)
+                        (<span class="chinese-affiliation" style="display: none;">中国科学院</span><span
+                            class="english-affiliation">Chinese Academy of Sciences</span>)
                     </span>
                 </div>
             </div>
-            <p style="font-size: 14px; color: #666;">*: to be confirmed.</p>
+            <p style="font-size: 14px; color: #666; margin-bottom: -5pt;">*: to be confirmed.</p>
         </div>
 
         <h2>Registration</h2>
@@ -504,28 +537,26 @@
             const chineseAffiliations = document.querySelectorAll('.chinese-affiliation');
             const englishAffiliations = document.querySelectorAll('.english-affiliation');
             const button = document.getElementById('nameToggle');
-            
-            const isChineseVisible = chineseNames[0].style.display !== 'none';
-            
+
+            const isChineseVisible = chineseNames.length && chineseNames[0].style.display !== 'none';
+
             chineseNames.forEach(name => {
                 name.style.display = isChineseVisible ? 'none' : 'inline';
             });
-            
+
             englishNames.forEach(name => {
                 name.style.display = isChineseVisible ? 'inline' : 'none';
             });
-            
+
             chineseAffiliations.forEach(affiliation => {
                 affiliation.style.display = isChineseVisible ? 'none' : 'inline';
             });
-            
+
             englishAffiliations.forEach(affiliation => {
                 affiliation.style.display = isChineseVisible ? 'inline' : 'none';
             });
-            
-            button.style.background = isChineseVisible ? '#e8f4f8' : '#f0f0f0';
-            button.style.borderColor = isChineseVisible ? '#4a9eff' : '#ccc';
-            button.style.color = isChineseVisible ? '#2563eb' : '#666';
+
+            button.innerText = isChineseVisible ? "中/EN" : "EN/中";
         }
     </script>
 
@@ -533,4 +564,5 @@
         &copy; 2025 AGK Conference Organizers
     </footer>
 </body>
+
 </html>
