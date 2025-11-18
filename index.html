@@ -224,6 +224,33 @@
             font-weight: 500;
         }
 
+        .handbook-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: clamp(18px, 3vw, 24px);
+            padding: 10px 26px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .handbook-button:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+            background: #111;
+        }
+
 
         .contact-intro {
             margin: 0 0 .5rem;
@@ -294,6 +321,11 @@
             .speakers-compact {
                 padding: 20px;
             }
+
+            .handbook-button {
+                width: 100%;
+                max-width: 260px;
+            }
         }
 
         /* Dark mode support */
@@ -329,7 +361,7 @@
                 border-color: #333;
             }
 
-            #nameToggle {
+            #nameToggle .handbook-button {
                 background: #333;
                 border-color: #555;
                 color: #ccc;
@@ -361,6 +393,10 @@
                 box-shadow: none;
                 border: 1px solid #ccc;
             }
+
+            .handbook-button {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -374,8 +410,8 @@
             </div>
         </div>
     </div>
-
     <div class="container">
+
 
         <h2>About the Conference</h2>
         <p>K-theory has served as a bridge between algebra and geometry ever since the Grothendieck–Riemann–Roch theorem
@@ -386,13 +422,18 @@
             a forum for cross-disciplinary exchange and collaboration, the workshop will foster interaction among
             researchers from diverse fields.</p>
 
+        <div style="display: flex;justify-content: center;">
+            <a href="Conference_Handbook__Copy_.pdf" class="handbook-button">Conference Handbook</a>
+        </div>
+
         <div class="section-header">
             <h2>Invited Speakers</h2>
             <button id="nameToggle" onclick="toggleNames()">中/EN</button>
         </div>
         <div class="speakers-compact">
             <div class="speakers-section">
-                 <div class="speaker-line"> Grigory Andreychev <span class="speaker-affiliation-inline">(Morningside Center of Mathematics)</span></div>
+                <div class="speaker-line"> Grigory Andreychev <span class="speaker-affiliation-inline">(Morningside
+                        Center of Mathematics)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">曹晋</span>
                     <span class="english-name">Jin Cao</span>
@@ -441,7 +482,8 @@
                 </div>
                 <div class="speaker-line">Tomoo Matsumura <span class="speaker-affiliation-inline">(International
                         Christian University)</span></div>
-                <div class="speaker-line">Satoshi Naito <span class="speaker-affiliation-inline">(Institute of Science Tokyo)</span></div>
+                <div class="speaker-line">Satoshi Naito <span class="speaker-affiliation-inline">(Institute of Science
+                        Tokyo)</span></div>
                 <div class="speaker-line">
                     <span class="chinese-name" style="display: none;">秦厚荣</span>
                     <span class="english-name">Hourong Qin</span>
