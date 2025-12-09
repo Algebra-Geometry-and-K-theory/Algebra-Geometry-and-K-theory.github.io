@@ -212,6 +212,7 @@
             line-height: 1.4;
         }
 
+        #photoToggle,
         #nameToggle {
             background: #f0f0f0;
             border: 1px solid #ccc;
@@ -361,7 +362,9 @@
                 border-color: #333;
             }
 
-            #nameToggle .handbook-button {
+            #photoToggle,
+            #nameToggle,
+            .handbook-button {
                 background: #333;
                 border-color: #555;
                 color: #ccc;
@@ -384,7 +387,9 @@
                 border-bottom: 2px solid #000;
             }
 
-            #nameToggle {
+            #photoToggle,
+            #nameToggle,
+            .handbook-button {
                 display: none;
             }
 
@@ -392,10 +397,6 @@
             .program-schedule {
                 box-shadow: none;
                 border: 1px solid #ccc;
-            }
-
-            .handbook-button {
-                display: none;
             }
         }
     </style>
@@ -533,9 +534,18 @@
                         <span class="english-affiliation">Chinese Academy of Sciences</span>)
                     </span>
                 </div>
-                            <p style="font-size:14px;color:#666;margin-bottom:0;"> </p>
-        </div>
+                <p style="font-size:14px;color:#666;margin-bottom:0;"> </p>
             </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Group Photo</h2>
+            <button id="photoToggle" onclick="toggleGroupPhoto()">Show Photo</button>
+        </div>
+
+        <div id="groupPhotoWrapper" class="group-photo-wrapper" style="display: none; justify-content: center;">
+            <img src="group_photo.jpg" width="100%" alt="Group Photo" />
+        </div>
 
         <h2>Organizing Committee</h2>
         <p>
@@ -582,6 +592,16 @@
             });
 
             button.innerText = isChineseVisible ? "中/EN" : "EN/中";
+        }
+
+        function toggleGroupPhoto() {
+            const wrapper = document.getElementById('groupPhotoWrapper');
+            const button = document.getElementById('photoToggle');
+
+            const isHidden = wrapper.style.display === 'none' || !wrapper.style.display;
+
+            wrapper.style.display = isHidden ? 'flex' : 'none';
+            button.innerText = isHidden ? 'Hide Photo' : 'Show Photo';
         }
     </script>
 
